@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="consolidation_user" model="res.groups">
+    <field name="name">Consolidation user</field>
+    <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+    <field name="implied_ids" eval="[(4, ref('currency_monthly_rate.monthly_rates_group'))]"/>
+  </record>
+  <record id="consolidation_manager" model="res.groups">
+    <field name="name">Consolidation manager</field>
+    <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+    <field name="implied_ids" eval="[(4, ref('consolidation_user'))]"/>
+  </record>
+</odoo>

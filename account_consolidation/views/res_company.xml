@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="groups_id" eval="[(4,ref('account_consolidation.consolidation_manager'))]"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="before">
+                <field name="is_consolidation" />
+                <field name="consolidation_percentage" attrs="{'invisible': [('is_consolidation', '=', True)]}" />
+            </field>
+        </field>
+    </record>
+</odoo>
